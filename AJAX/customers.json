@@ -1,0 +1,30 @@
+
+[
+
+    
+
+    {
+        "id" : 1,
+        "name" : "Nahid",
+        "email" : "nahid@gmail.com",
+        "city": "Dhaka"
+    },
+
+    
+    {
+        "id" : 3,
+        "name" : "Baby",
+        "email" : "babu@gmail.com",
+        "city": "Noakahli"
+    },
+
+    {
+        "id" : 4,
+        "name" : "Akash",
+        "email" : "akasj@gmail.com",
+        "city": "Nak"
+    }
+
+
+
+]

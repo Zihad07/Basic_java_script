@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax-Basic</title>
+</head>
+<body>
+
+    <h1>Asynchronous JavaScript</h1>
+
+    <script>
+
+        // const second = () => {
+        //     setTimeout(()=>{
+        //         console.log('Hi second')
+        //     },2000)
+
+            
+        // }
+        // const first = ()=> {
+        //     console.log('Hey  there');
+        //     second();
+        //     console.log('By.. first');
+        // }
+
+        // first();
+
+        // function getRecipe(){
+        //     setTimeout(()=>{
+        //         const recipeID = [523, 883, 432, 974];
+        //         console.log(recipeID);
+
+        //         setTimeout((id)=>{
+        //             const recipe = {
+        //                 title : 'Delicious meet',
+        //                 publisher: 'Nahid'
+        //             }
+
+        //             console.log(recipe);
+                    
+        //         setTimeout(publisher=>{
+        //             const recipe1 = {
+        //                 title : 'Chiket Briani',
+        //                 publisher : publisher
+        //             }
+        //             console.log(recipe1);
+        //         },1000,recipe.publisher);
+        //         },1000,recipeID[1])
+
+        //     });
+        // }
+
+        // getRecipe();
+
+        // Promisses
+
+        // const getIDs = new Promise((resolve, reject)=>{
+        //     setTimeout(()=>{
+        //         resolve([2,3,4,5])
+        //     },1500);
+
+        // });
+
+        // const getRecipe = id=>{
+        //     return new Promise((resolve, reject)=>{
+        //         setTimeout(ID=>{
+        //             const recipe = {
+        //                 title : 'Chicken',
+        //                 publisher : 'nahid'
+        //             };
+
+        //             resolve(`${ID} -> ${recipe.title} -> ${recipe.publisher}`);
+        //         },1500, id);
+        //     });
+        // }
+
+        // const semiler = id => {
+        //     return new Promise((resolve, reject)=>{
+        //         setTimeout(()=>{
+        //             const recipe = {
+        //                 title : 'Mutton',
+        //                 publisher : 'nahid'
+        //             };
+
+        //             resolve(` -> ${recipe.title} -> ${recipe.publisher}`);
+        //         },1500, id);
+        //     });
+        // }
+        
+        // getIDs
+        // .then(ids=>{
+        //     console.log(ids);
+        //     return getRecipe(ids[2])
+        // })
+        // .then(recepe_item=>{
+        //     console.log(recepe_item)
+        //     return semiler()
+        // })
+        // .then(recipe=>{
+        //     console.log(recipe)
+        // })
+        // .catch(err=>{
+        //     console.log('Error')
+        // })
+            
+        //---------------------------------------------
+        // Async and Await
+
+        // async function getRecipeAW() {
+        //     const ids = await getIDs;
+        //     console.log(ids);
+
+        //     const recipe = await getRecipe(ids[1]);
+        //     console.log(recipe);
+
+        //     const smilarRecipe = await semiler();
+        //     console.log(smilarRecipe);
+
+        //     //  aync fucntion always return a promises
+        //     // if you want ...
+
+        //     return recipe;
+        // }
+
+        // // getRecipeAW();
+        // getRecipeAW().then(result=> {
+        //     console.log(`Return promisses result -> ${result}`)
+        // })
+
+        // Fetch data
+
+            // function getWeather(woied){
+                
+            //     fetch(`https://crossorigin.me/https://www.metaweather.com/api/location/${woied}/`)
+            //     .then(result => {
+            //         console.log(result);
+
+            //         return result.json()
+            //     })
+            //     .then(data=>{
+            //         // console.log(data)
+
+            //         const today = data.conslidated_weather[0];
+            //         console.log(`Temperatur in ${data.title} stay between ${today.min_temp} and ${toda.max_temp}`);
+            //     })
+            //     .catch(error => {
+            //         console.log(error);
+            //     })
+            // }
+
+            // getWeather(2487956)
+
+
+            async function getWeather(woied){
+                try {
+                    const result = await fetch(`https://crossorigin.me/https://www.metaweather.com/api/location/${woied}/`);
+                    const data  = await result.json();
+                    console.log(data);
+                }
+                catch(err){
+                    alert(err)
+                }
+                
+            }
+
+            getWeather(2487956)
+    </script>
+    
+</body>
+</html>

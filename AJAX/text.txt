@@ -1,0 +1,2 @@
+Hi Well-Come
+For learning of basic AJAX.
